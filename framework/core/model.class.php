@@ -19,7 +19,7 @@
 
 		public function getAll($data = null)
 		{
-			$(!this->$_sql)
+			if(!$this->_sql)
 			{
 				throw new Exception("No SQL query!");
 			}

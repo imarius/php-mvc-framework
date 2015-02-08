@@ -9,16 +9,16 @@
 		protected $_action;
 		protected $_view;
 		protected $_modelBaseName;
-
-		protected $_frameworkStruct = "framework" . DS . "bootstrap" . DS . "templates";
-
+		protected $_frameworkStruct;
+		
 		public function __construct($model, $action)
 		{
 			$this->_controller = ucwords(__CLASS__);
 			$this->_action = $action;
 			$this->_modelBaseName = $model;
+			$this->_frameworkStruct = 'framework' . DS . 'bootstrap' . DS . 'templates';
 
-			$this->_view = new View(HOME . DS . $_frameworkStruct . DS . strtolower($this->_modelBaseName)) . DS . $action . '.tpl');
+			$this->_view = new View(HOME . DS . $this->_frameworkStruct . DS . strtolower($this->_modelBaseName) . DS . $action . '.tpl');
 		}
 
 		protected function _setModel($modelName)
@@ -29,7 +29,7 @@
 
 		protected function _setView($viewName)
 		{
-			$this->_view = new View(HOME . DS . $_frameworkStruct . DS . strtolower($this->_modelBaseName)) . DS . $viewName . '.tpl');
+			$this->_view = new View(HOME . DS . $this->_frameworkStruct . DS . strtolower($this->_modelBaseName) . DS . $viewName . '.tpl');
 		}
 	}
 ?>

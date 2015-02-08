@@ -1,19 +1,10 @@
 <?php
 	/*
-	* DB Connection Strings
-	*/
-	define ('DB_HOST', 'localhost');
-	define ('DB_NAME', 'northwind');
-	define ('DB_USER', 'root');
-	define ('DB_PASS', '');
-
-	/*
-	* Default Route Values
-	* TODO: Think of a better place to have this.
+	* Default Route Config
 	*/
 
-	$controller = "home";
-	$action = "index";
+	$controller = "Home";
+	$action = "Index";
 	$query = null;
 
 	if(isset($_GET['load']))
@@ -23,7 +14,7 @@
 
 		$controller = ucwords($params[0]);
 
-		if(isset($params[1]) && !empty(params[1]))
+		if(isset($params[1]) && !empty($params[1]))
 		{
 			$action = $params[1];
 		}
@@ -36,7 +27,7 @@
 
 	$modelName = $controller;
 	$controller .= 'Controller';
-	$load = new $Controller($modelName, $action);
+	$load = new $controller($modelName, $action);
 
 	if(method_exists($load, $action))
 	{
