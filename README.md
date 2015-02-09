@@ -1,1 +1,10 @@
-Simple MVC php framework to bootstrap future projects. Enjoy.
+#Simple MVC framework
+
+A simple MVC framework for PHP for bootstraping projects.
+
+#TODO's :
+
+ - Membership module.
+ - Javascript Global Namespace.
+ - Ecommerce module.
+ - Write tests.

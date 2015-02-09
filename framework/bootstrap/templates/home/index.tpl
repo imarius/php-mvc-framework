@@ -1,11 +1,5 @@
-<!DOCTYPE html>
- 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title><?php echo $title; ?></title>
-    </head>
-    <body>
-        <h1><?php echo $greeting; ?></h1>
-    </body>
-</html>
+<?php include HOME . DS . "framework" . DS . "bootstrap" . DS . "templates" . DS . "_includes" . DS . "header.tpl" ?>
+
+<h2><?php echo $greeting ?></h2>
+
+<?php include HOME . DS . "framework" . DS . "bootstrap" . DS . "templates" . DS . "_includes" . DS . "footer.tpl" ?>
