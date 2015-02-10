@@ -81,8 +81,14 @@
 						$_SESSION['username'] = $userData['username'];
 						$_SESSION['email'] = $userData['email'];
 
+						if(isset($_POST['formLocation']))
+						{
+							header('Location: ' . $_POST['formLocation']);
+							exit;
+						}
 
 						header('Location: /account/manage');
+						exit;
 
 					}
 					catch(Exception $e)
@@ -120,7 +126,8 @@
 			session_unset();
 			session_destroy();
 
-			header("Location: /account/login");
+			header("Location: " . $_SERVER['HTTP_REFERER']);
+			exit;
 		}
 
 		public function Register()
@@ -128,6 +135,7 @@
 			if (isset($_SESSION['uid']))
 			{
 				header('Location: /account/manage');
+				exit;
 			}
 
 			if (isset($_POST['registerSubmit']))
@@ -195,6 +203,7 @@
 						$_SESSION['uid'] = $userData['id'];
 						$_SESSION['username'] = $userData['username'];
 						$_SESSION['email'] = $userData['email'];
+						$_SESSION['allUserData'] = $userData;
 
 						$message = "Your are now registered " . $userData['username'] . ". Your email is " . $userData['email'];
 					} 
