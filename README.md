@@ -4,7 +4,7 @@ A simple MVC framework for PHP for bootstraping projects.
 
 #TODO's :
 
- - Membership module.
+ - ~~Membership module~~.
  - Javascript Global Namespace.
  - New User Email Validation.
  - Ecommerce module.
