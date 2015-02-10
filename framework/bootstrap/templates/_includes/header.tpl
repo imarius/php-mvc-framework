@@ -9,7 +9,7 @@
         <title><?php echo $title; ?></title>
 
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo "static" . DS . "css" . DS . "site.css" ?>">
+        <link rel="stylesheet" href="/static/css/site.css">
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
     </head>

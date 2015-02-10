@@ -1,6 +1,6 @@
 <?php
 	/*
-	* DB Connection Strings
+	* DB Connection Strings & Enviroment Constants
 	*/
 	define ('DB_HOST', 'localhost');
 	define ('DB_NAME', 'northwind');

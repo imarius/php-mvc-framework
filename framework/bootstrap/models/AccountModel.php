@@ -32,9 +32,35 @@
 			$this->_uid = $uid;
 		}
 
+		public function getUserLogin()
+		{
+			$sql = "SELECT id, username, email, displayName, password 
+					FROM northwind_membership 
+					WHERE username = '" . $this->_username ."' LIMIT 1";
+
+			$this->_setSql($sql);
+
+			$user = $this->getRow(array($this->_uid));
+
+			if(empty($user))
+			{
+				return false;
+			} 
+			elseif(!password_verify($this->_password, $user['password']))
+			{
+				return false;
+			}
+
+			return $user;
+		}
+
 		public function getUser()
 		{
-			$sql = "SELECT username, email, displayName from northwind_membership where username = " . $this->_username;
+
+
+			$sql = "SELECT id, username, email, displayName 
+					FROM northwind_membership 
+					WHERE username = '" . $this->_username ."' LIMIT 1";
 
 			$this->_setSql($sql);
 
@@ -50,12 +76,14 @@
 
 		public function registerUser()
 		{
-			$sql = "INSERT INTO northwind_membership (email, username, password) VALUES (? , ? , ?)";
+			$sql = "INSERT INTO northwind_membership (email, username, password, displayName) 
+					VALUES (? , ? , ?, ?)"; 
 
 		    $data = array(
 		    	$this->_email,
 		    	$this->_username,
-		    	$this->_password
+		    	password_hash($this->_password, PASSWORD_DEFAULT),
+		    	$this->_displayName
 		    );
 
 			$sth = $this->_db->prepare($sql);
@@ -65,8 +93,8 @@
 
 		public function updateUser()
 		{
-			$sql = "UPDATE northwind_membership SET username = ". $userData['username'] ." , email = ". $userData['email'] .
-					", passowrd=" . $userData['password'] . "displayName=" . $userData["displayName"]." WHERE id = " . $userData["uid"];
+			$sql = "UPDATE northwind_membership SET username = ". $this->_username ." , email = ". $this->_email .
+					", passowrd=" . $this->_password . "displayName=" . $this->_displayName." WHERE id = " . $this->_uid;
 
 			$this->_setSql($sql);
 

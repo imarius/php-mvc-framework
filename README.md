@@ -6,5 +6,6 @@ A simple MVC framework for PHP for bootstraping projects.
 
  - Membership module.
  - Javascript Global Namespace.
+ - New User Email Validation.
  - Ecommerce module.
  - Write tests.
