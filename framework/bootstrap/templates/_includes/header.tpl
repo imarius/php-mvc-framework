@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="/static/css/site.css">
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+        <script src="//code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container-fluid">

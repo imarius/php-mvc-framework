@@ -34,7 +34,7 @@
 
 		public function getUserLogin()
 		{
-			$sql = "SELECT id, username, email, displayName, password 
+			$sql = "SELECT * 
 					FROM northwind_membership 
 					WHERE username = '" . $this->_username ."' LIMIT 1";
 
@@ -58,7 +58,7 @@
 		{
 
 
-			$sql = "SELECT id, username, email, displayName 
+			$sql = "SELECT *
 					FROM northwind_membership 
 					WHERE username = '" . $this->_username ."' LIMIT 1";
 

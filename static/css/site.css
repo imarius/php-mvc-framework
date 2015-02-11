@@ -4,6 +4,19 @@ body {
   background:#f0f0f0;
 }
 
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.row-centered {
+    text-align:center;
+}
+
 .login-container{
     position: relative;
     width: 400px;
@@ -291,3 +304,7 @@ Image credits: unsplash.com
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
 }
+
+.navbar-xs { height: 22px; min-height:22px; border-radius:0} 
+.navbar-xs .navbar-brand{ padding: 2px 8px;font-size: 14px;line-height: 14px; } 
+.navbar-xs .navbar-nav > li > a { border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px }

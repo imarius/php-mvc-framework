@@ -80,6 +80,7 @@
 						$_SESSION['uid'] = $userData['id'];
 						$_SESSION['username'] = $userData['username'];
 						$_SESSION['email'] = $userData['email'];
+						$_SESSION['allUserData'] = $userData;
 
 						if(isset($_POST['formLocation']))
 						{
